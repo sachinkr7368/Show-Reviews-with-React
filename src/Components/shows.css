@@ -1,0 +1,15 @@
+.show {
+    display: grid;
+}
+
+.input {
+    display: grid;
+    width: 20%;
+    border-radius: 7px;
+    height: 25px;
+    align-items: center;
+}
+
+input {
+    align-items: center;
+}

@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  background-image: url("https://source.unsplash.com/1600x900/?movies,poster");
+  height: 600px;
+  ;
+  background-repeat: no-repeat;
+  margin-top: 0%;
+
+}
+
+.header {
+  background-color: black;
+  color: white;
+  size: 25px;
+  opacity: 0.8;
+  width: 60%;
+  height: 450px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 40px;
+}
+
+.header-item-1 {
+  padding-top: 0%;
+  margin-bottom: 0%;
+  font-size: 40px;
+  font-style: italic;
+  color: cyan;
+}
+
+.header-item-2 {
+  margin-top: 0%;
+  margin-bottom: auto;
+  font-size: 30px;
+  color: cyan;
+}
+
+.radio-input {
+  margin-top: 15px;
+  font-size: 20px;
+  color: cyan;
+}
+
+.shows-display {
+  background-color: grey;
+  width: 100%;
+  margin-right: 5px;
+  height: fit-content;
+  margin-top: 0%;
+  margin-bottom: 0%;
+
+}
+
+.footer {
+  display: flex;
+  background-color: black;
+  color: yellow;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0%;
+}
