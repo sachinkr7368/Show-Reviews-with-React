@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import './shows.css';
 
 export default function Actor() {
@@ -53,43 +53,64 @@ export default function Actor() {
     fetchdata();
   }, [actors]);
 
+  const debounce = (func) => {
+    let timer;
+    return function (...args) {
+      const context = this;
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => {
+        timer = null;
+        func.apply(context, args);
+      }, 500);
+    }
+  }
+
   const actorsName = (event) => {
     setActors(event.target.value);
   };
 
-  return (
-    <div className="main">
-      <p style={{ color: "white" }}> {actors === '' ? 'Enter Show Name by Actor Below' : ''}</p>
-      <div className="input-box"><input className="input" onChange={actorsName} placeholder="eg: Akon.." /></div>
+  const handleInput = useCallback(debounce(actorsName), [])
 
-      {data2.length > 0 ? (
+  return (
+    <div className="shows">
+
+      <div className="input-box-details"> {actors === '' ? 'Enter Show Name by Actor Below' : ''}</div>
+      <div className="search-box">
+        <input className="input" onChange={handleInput} placeholder="eg: Akon.." />
+      </div>
+      <div className="Shows">
+      {data2.length > 0 &&
         data2.map((item) => {
           return (
-            <div className="show">
-              <img className="image" onHover={item._embedded.show.summary}
-                src={
-                  item._embedded.show.image.medium !== null
-                    ? item._embedded.show.image.medium
-                    : ""
-                }
-                alt="No image available"
-              />
-              <div className="details">
-                <h3 className="name">{item._embedded.show.name}</h3>
-                <h3 className="rating">
-                  {item._embedded.show.rating.average !== null
-                    ? item._embedded.show.rating.average
-                    : "0.0"}
-                </h3>
-                <p className="summary">{item._embedded.show.summary}</p>
-
+            <main className="main">
+              <div className="show">
+                <img className="image" onHover={item._embedded.show.summary}
+                  src={
+                    item._embedded.show.image.medium !== null
+                      ? item._embedded.show.image.medium
+                      : ""
+                  }
+                  alt="No image available"
+                />
+                <div className="details">
+                  <h3 className="name">{item._embedded.show.name}({item._embedded.show.language})</h3>
+                  <span className="rating">⭐
+                    {item._embedded.show.rating.average !== null
+                      ? item._embedded.show.rating.average
+                      : "0.0"}
+                  </span>
+                </div>
+                <div className="summary">
+                  <h3 >Summary:- </h3>
+                  {item._embedded.show.summary}
+                </div>
               </div>
-            </div>
+
+            </main>
           );
         })
-      ) : (
-        <p className="result" style={{ color: "red" }}>No result found!</p>
-      )}
+      }
+      </div>
     </div>
   );
 }

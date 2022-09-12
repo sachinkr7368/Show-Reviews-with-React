@@ -1,17 +1,133 @@
-.show {
-    display: grid;
-}
+ .main {
+     display: flex;
+     flex-wrap: wrap;
+ }
 
-.input {
-    display: grid;
-    width: 20%;
-    border-radius: 7px;
-    height: 25px;
-    align-items: center;
-}
-.image{
-    display: grid;
-}
-.input-box {
-    text-align:center;
+ .show {
+     background-color: rgb(48, 96, 151);
+     border-radius: 3px;
+     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+     width: 300px;
+     margin: 1.5rem;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .details {
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0.5rem 1rem 1rem;
+     letter-spacing: 0.5px;
+ }
+
+ .show img {
+     object-fit: cover;
+     height: 400px;
+     width: 300px;
+ }
+
+ .details h3 {
+     margin: 0;
+     font-size: 22px;
+ }
+
+ .details span {
+     background-color: rgb(48, 96, 151);
+     padding: 0.25rem 0.5rem;
+     font-weight: bold;
+     border-radius: 3px;
+     font-size: 25px;
+ }
+
+ .summary {
+     background-color: rgb(48, 96, 151);
+     padding: 2rem;
+     position: absolute;
+     max-height: 60%;
+     overflow: auto;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     transform: translateY(100%);
+     transition: ransform 0.3s ease-in;
+     color: white;
+     font-weight: bold;
+ }
+
+ .summary h3 {
+     margin-top: 0;
+ }
+
+ .show:hover .summary {
+     transform: translateY(0);
+ }
+
+ .input-box-details {
+     margin-top: 0px;
+     margin-bottom: 5px;
+     padding: auto;
+     display: flex;
+     font-weight: bold;
+     justify-content: center;
+
+ }
+
+ .search-box {
+     display: flex;
+     margin-top: 5px;
+     margin-bottom: 5px;
+
+     justify-content: center;
+
+ }
+
+ .input {
+     background-color: transparent;
+     border: 2px solid rgb(48, 96, 151);
+     border-radius: 20px;
+     color: black;
+     padding: 0.5rem 1rem;
+     font-family: inherit;
+     font-size: 1.2rem;
+     width: 350px;
+ }
+
+ .input::placeholder {
+     color: rgb(9, 72, 77)
+ }
+
+ header {
+     background-color: rgb(130, 162, 226);
+     display: flex;
+     justify-content: flex-end;
+     padding: 1rem;
+ }
+
+ .Shows {
+     display: grid;
+     /* grid-template-columns: auto auto auto auto auto; */
+ }
+
+ @media screen and (min-width: 576px) {
+     .Shows {
+         display: grid;
+         grid-template-columns: auto auto;
+     }
+ }
+
+ @media screen and (min-width: 992px) {
+     .Shows {
+         display: grid;
+         grid-template-columns: auto auto auto;
+     }
+    }
+ 
+
+ @media screen and (min-width: 1200px) {
+     .Shows {
+         display: grid;
+         grid-template-columns: auto auto auto auto auto;
+     }
 }

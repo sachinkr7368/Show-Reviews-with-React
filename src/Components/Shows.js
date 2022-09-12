@@ -1,5 +1,5 @@
 import "./shows.css";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 export default function Shows() {
   const [shows, setShows] = useState("");
@@ -18,37 +18,55 @@ export default function Shows() {
     fetchdata();
   }, [shows]);
 
+  const debounce = (func) => {
+    let timer;
+    return function (...args) {
+      const context = this;
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => {
+        timer = null;
+        func.apply(context, args);
+      }, 1000);
+    }
+  }
+
   const showsName = (event) => {
     setShows(event.target.value);
   };
-  return (
-    <div className="main">
-      <p style={{ color: "White" }}>{shows === '' ? 'Enter Show Name Below' : ''}</p>
-      <input className="input" onChange={showsName} placeholder="eg: friends" />
 
-      {data.length > 0 ? (
+  const optimisedVesion = useCallback(debounce(showsName), []);
+
+  return (
+    <div className="shows">
+      <div className="input-box-details"> {shows === '' ? 'Enter Show Name Below' : ''}</div>
+      <div className="search-box">
+        <input className="input" onChange={optimisedVesion} placeholder="eg: friends" />
+      </div>
+      <div className="Shows">
+      {data.length > 0 &&
         data.map((item) => {
           return (
-            <div className="show">
-              <h3 key={item.show.id}>
+            <main className="main">
+              <div className="show" key={item.show.id}>
                 <img className="image"
                   src={item.show.image !== null ? item.show.image.medium : ""}
                   alt="Image not Available"
                 />
                 <div className="details">
-                  <h3 className="show-name">{item.show.name}</h3>
-                  <h3 className="rating">
-                    {item.show.rating.average !== null ? item.show.rating.average : "0.0"}</h3>
-
+                  <h3 className="show-name">{item.show.name}({item.show.language})</h3>
+                  <span className="rating">⭐
+                    {item.show.rating.average !== null ? item.show.rating.average : "0.0"}</span>
                 </div>
-                <p className="summary">{item.show.summary}</p>
-              </h3>
-            </div>
+                <div className="summary">
+                  <h3>Summary</h3>
+                  {item.show.summary}
+                </div>
+              </div>
+            </main>
           );
         })
-      ) : (shows === '' ?
-        <p className="result" style={{ color: "red" }}>No result found!</p> : ''
-      )}
+      }
+      </div>
     </div>
   );
 }
