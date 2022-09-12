@@ -23,7 +23,7 @@ export default function Shows() {
   };
   return (
     <div className="main">
-      <p style={{ color: "White" }}>{shows == '' ? 'Enter Show Name Below' : ''}</p>
+      <p style={{ color: "White" }}>{shows === '' ? 'Enter Show Name Below' : ''}</p>
       <input className="input" onChange={showsName} placeholder="eg: friends" />
 
       {data.length > 0 ? (

@@ -60,7 +60,7 @@ export default function Actor() {
   return (
     <div className="main">
       <p style={{ color: "white" }}> {actors === '' ? 'Enter Show Name by Actor Below' : ''}</p>
-      <input className="input" onChange={actorsName} placeholder="eg: Akon.." />
+      <div className="input-box"><input className="input" onChange={actorsName} placeholder="eg: Akon.." /></div>
 
       {data2.length > 0 ? (
         data2.map((item) => {

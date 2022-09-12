@@ -9,7 +9,9 @@
     height: 25px;
     align-items: center;
 }
-
-input {
-    align-items: center;
+.image{
+    display: grid;
+}
+.input-box {
+    text-align:center;
 }
