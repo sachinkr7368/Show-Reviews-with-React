@@ -45,6 +45,7 @@ export default function Shows() {
       <div className="Shows">
       {data.length > 0 &&
         data.map((item) => {
+           const regex = /(<([^>]+)>)/ig;
           return (
             <main className="main">
               <div className="show" key={item.show.id}>
@@ -59,7 +60,7 @@ export default function Shows() {
                 </div>
                 <div className="summary">
                   <h3>Summary</h3>
-                  {item.show.summary}
+                  {item.show.summary.replace(regex,'')}
                 </div>
               </div>
             </main>
