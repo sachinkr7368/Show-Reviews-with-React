@@ -81,6 +81,7 @@ export default function Actor() {
       <div className="Shows">
       {data2.length > 0 &&
         data2.map((item) => {
+           const regex = /(<([^>]+)>)/ig;
           return (
             <main className="main">
               <div className="show">
@@ -102,7 +103,7 @@ export default function Actor() {
                 </div>
                 <div className="summary">
                   <h3 >Summary:- </h3>
-                  {item._embedded.show.summary}
+                  {item._embedded.show.summary.replace(regex,'')}
                 </div>
               </div>
 
