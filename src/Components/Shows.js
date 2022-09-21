@@ -35,7 +35,7 @@ export default function Shows() {
   };
 
   const optimisedVesion = useCallback(debounce(showsName), []);
-
+  
   return (
     <div className="shows">
       <div className="input-box-details"> {shows === '' ? 'Enter Show Name Below' : ''}</div>
@@ -46,6 +46,7 @@ export default function Shows() {
       {data.length > 0 &&
         data.map((item) => {
            const regex = /(<([^>]+)>)/ig;
+           
           return (
             <main className="main">
               <div className="show" onClick={() => window.open(`${item.show.url !== null ? item.show.url : ''}`, "_blank")} key={item.show.id}>
@@ -60,7 +61,7 @@ export default function Shows() {
                 </div>
                 <div className="summary">
                   <h3>Summary</h3>
-                  {item.show.summary.replace(regex,'')}
+                  {item.show.summary !== null ? item.show.summary.replace(regex,''): ''}
                 </div>
               </div>
             </main>
