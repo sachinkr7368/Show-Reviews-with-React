@@ -2,10 +2,8 @@
   /* text-align: center;
   font-family: sans-serif; */
   background-image: url("https://source.unsplash.com/1600x800/?vikings");
-  height: 770px;
-  background-repeat:repeat-y;
-
-   
+  height:800px;
+  margin:auto; 
 }
 
 .header {
@@ -59,10 +57,10 @@
 .shows-display {
   
   background-color:transparent;
-  margin-right:auto;
-  height: fit-content;
   margin-top: 0%;
   margin-bottom: 0%;
-
+  margin-left:10px;
+  margin-right:10px;
 }
+
 
