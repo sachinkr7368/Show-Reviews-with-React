@@ -3,7 +3,7 @@
 ### By Sachin Kumar
 
 #### This Web Site is for Checking Web Series Reviews
-#### [View My Work here ->](https://sachin-tv-maze.vercel.app/)
+#### [View My Work here ->](https://sachin-show-reviews.vercel.app/)
 
 ## Technologies Used
 
