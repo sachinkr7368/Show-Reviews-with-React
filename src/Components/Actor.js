@@ -79,38 +79,38 @@ export default function Actor() {
         <input className="input" onChange={handleInput} placeholder="eg: Akon.." />
       </div>
       <div className="Shows">
-      {data2.length > 0 &&
-        data2.map((item) => {
-           const regex = /(<([^>]+)>)/ig;
-          return (
-            <main className="main">
-              <div className="show">
-                <img className="image" onHover={item._embedded.show.summary}
-                  src={
-                    item._embedded.show.image.medium !== null
-                      ? item._embedded.show.image.medium
-                      : ""
-                  }
-                  alt="No image available"
-                />
-                <div className="details">
-                  <h3 className="name">{item._embedded.show.name}({item._embedded.show.language})</h3>
-                  <span className="rating">⭐
-                    {item._embedded.show.rating.average !== null
-                      ? item._embedded.show.rating.average
-                      : "0.0"}
-                  </span>
+        {data2.length > 0 &&
+          data2.map((item) => {
+            const regex = /(<([^>]+)>)/ig;
+            return (
+              <main className="main">
+                <div className="show" onClick={() => window.open(`${item._embedded.show.url !== null ? item._embedded.show.url : ''}`, "_blank")}>
+                  <img className="image" onHover={item._embedded.show.summary}
+                    src={
+                      item._embedded.show.image.medium !== null
+                        ? item._embedded.show.image.medium
+                        : ""
+                    }
+                    alt-text="No image available"
+                  />
+                  <div className="details">
+                    <h3 className="name">{item._embedded.show.name}({item._embedded.show.language})</h3>
+                    <span className="rating">⭐
+                      {item._embedded.show.rating.average !== null
+                        ? item._embedded.show.rating.average
+                        : "0.0"}
+                    </span>
+                  </div>
+                  <div className="summary">
+                    <h3 >Summary:- </h3>
+                    {item._embedded.show.summary.replace(regex, '')}
+                  </div>
                 </div>
-                <div className="summary">
-                  <h3 >Summary:- </h3>
-                  {item._embedded.show.summary.replace(regex,'')}
-                </div>
-              </div>
 
-            </main>
-          );
-        })
-      }
+              </main>
+            );
+          })
+        }
       </div>
     </div>
   );

@@ -17,13 +17,14 @@ function App() {
     }
   };
   return (
-    <div>
+    <div className='main-2'>
+      <p className='header-item-1'>SHOW Reviews</p>
       <div className="App">
         <div className='header'>
           <div className='header-details'>
-            <p className='header-item-1'>SHOW Reviews</p>
-            <p className='header-item-2'>Search your favourite shows</p><br />
-            <p className='choice' style={{ color: "cyan" }}>Please Select Your Choice</p>
+            
+            <p className='header-item-2' >Search your favourite shows</p><br />
+            <p className='choice' style={{ color: "white" }}>Please Select Your Choice</p>
             <div className='radio-input'>
               By Actors <input type="radio" value={selected} checked={selected === true} onChange={handleChange} />
 
@@ -32,10 +33,11 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      
       <div className='shows-display'>{selected === true ? <Actor /> : " "}
         {selected === false ? <Shows /> : " "}</div>
-      <div className='footer'>@Project By Sachin</div>
+      
+      </div>
     </div>
   );
 }

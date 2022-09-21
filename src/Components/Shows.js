@@ -48,10 +48,10 @@ export default function Shows() {
            const regex = /(<([^>]+)>)/ig;
           return (
             <main className="main">
-              <div className="show" key={item.show.id}>
+              <div className="show" onClick={() => window.open(`${item.show.url !== null ? item.show.url : ''}`, "_blank")} key={item.show.id}>
                 <img className="image"
                   src={item.show.image !== null ? item.show.image.medium : ""}
-                  alt="Image not Available"
+                  alt-text={item.show.name}
                 />
                 <div className="details">
                   <h3 className="show-name">{item.show.name}({item.show.language})</h3>

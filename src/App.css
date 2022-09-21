@@ -1,34 +1,33 @@
-.App {
-  text-align: center;
-  font-family: sans-serif;
-  background-image: url("./image3.jpg");
-  height: 800px;
-  background-repeat: no-repeat;
-  margin-top: 0%;
+.main-2 {
+  /* text-align: center;
+  font-family: sans-serif; */
+  background-image: url("https://source.unsplash.com/1600x800/?vikings");
+  height: 770px;
+  background-repeat:repeat-y;
+
+   
 }
 
 .header {
-  background-color: black;
-  color: white;
+  display:flex;
   size: 25px;
-  opacity: 0.8;
-  width: 60%;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  padding-left: 50px;
-  padding-top: 40px;
+  justify-content: center;
+  background-color: black;
+  border-radius: 15px;
+  opacity:0.7;
+  margin-left: 30% ;
+  margin-right:30%;
+  margin-top:15%;
+ 
 }
 
 .header-item-1 {
-  padding-top: 0%;
-  margin-bottom: 0%;
-  margin-left: auto;
-  margin-right: auto;
+ display:flex;
+ justify-content: flex-start;
   font-size: 40px;
-  font-style: italic;
-  color: cyan;
+  color:white;
+  margin-top:0%;
+  mix-blend-mode: difference;
 }
 
 .header-item-2 {
@@ -36,13 +35,16 @@
   margin-bottom: auto;
   margin-right: auto;
   margin-left: auto;
-  font-size: 30px;
-  color: cyan;
+  font-size: 40px;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .choice {
   margin-left: auto;
   margin-right: auto;
+  font-size:25px;
+  mix-blend-mode: difference;
 }
 
 .radio-input {
@@ -50,25 +52,17 @@
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
-  color: cyan;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .shows-display {
-  background-color: rgb(130, 162, 226);
-  width: 100%;
-  margin-right: 5px;
+  
+  background-color:transparent;
+  margin-right:auto;
   height: fit-content;
   margin-top: 0%;
   margin-bottom: 0%;
 
 }
 
-.footer {
-  display: flex;
-  background-color: black;
-  color: yellow;
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0%;
-}

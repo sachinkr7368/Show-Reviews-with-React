@@ -7,8 +7,8 @@
      background-color: rgb(48, 96, 151);
      border-radius: 3px;
      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-     width: 300px;
-     margin: 1.5rem;
+     width: 280px;
+     margin: auto;
      overflow: hidden;
      position: relative;
  }
@@ -51,9 +51,9 @@
      right: 0;
      bottom: 0;
      transform: translateY(100%);
-     transition: ransform 0.3s ease-in;
+     transition: transform 0.3s ease-in;
      color: white;
-     font-weight: bold;
+
  }
 
  .summary h3 {
@@ -65,12 +65,14 @@
  }
 
  .input-box-details {
-     margin-top: 0px;
-     margin-bottom: 5px;
+     margin-top: 10px;
+     margin-bottom: 10px;
      padding: auto;
      display: flex;
-     font-weight: bold;
+     font-size: 20px;
      justify-content: center;
+     color:white;
+     mix-blend-mode: difference;
 
  }
 
@@ -78,7 +80,6 @@
      display: flex;
      margin-top: 5px;
      margin-bottom: 5px;
-
      justify-content: center;
 
  }
@@ -87,7 +88,7 @@
      background-color: transparent;
      border: 2px solid rgb(48, 96, 151);
      border-radius: 20px;
-     color: black;
+     color: aliceblue;
      padding: 0.5rem 1rem;
      font-family: inherit;
      font-size: 1.2rem;
@@ -95,7 +96,7 @@
  }
 
  .input::placeholder {
-     color: rgb(9, 72, 77)
+     color: rgb(243, 248, 248)
  }
 
  header {
@@ -122,12 +123,18 @@
          display: grid;
          grid-template-columns: auto auto auto;
      }
-    }
- 
+ }
+
 
  @media screen and (min-width: 1200px) {
      .Shows {
          display: grid;
-         grid-template-columns: auto auto auto auto auto;
+         grid-template-columns: auto auto auto auto;
      }
+ }
+ @media screen and (min-width: 1350px) {
+    .Shows {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+    }
 }
